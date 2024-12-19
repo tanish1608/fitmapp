@@ -15,11 +15,11 @@ export default function InfoSection({ title, content, imageUrl, isReversed = fal
         </div>
         <div className="w-full lg:w-1/2">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
-            <div className="absolute inset-0 bg-purple-600/20" />
+            <div className="absolute inset-0" />
             <img
               src={imageUrl}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
             />
           </div>
         </div>
@@ -27,3 +27,6 @@ export default function InfoSection({ title, content, imageUrl, isReversed = fal
     </div>
   );
 }
+
+
+

@@ -15,13 +15,14 @@ export default function FAQ({ title, items }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 ">
       <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white">{title}</h2>
       <div className="space-y-3 sm:space-y-4">
         {items.map((item, index) => (
           <div
             key={index}
-            className="border border-gray-800 rounded-lg overflow-hidden bg-gray-900"
+            className="border border-gray-800 rounded-2xl overflow-hidden"
+            style={{ backgroundColor: '#161614' }}
           >
             <button
               className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center text-white hover:bg-gray-800 transition-colors"
