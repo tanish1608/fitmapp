@@ -24,7 +24,6 @@ export default function HomePage() {
       <Hero
         title="TRANSFORM WITH THE BEST AND YOUR FAVOURITE"
         subtitle="Join the revolution in fitness transformation"
-        buttonText="Register"
         imageUrl="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
         textColor="purple-600"
       />

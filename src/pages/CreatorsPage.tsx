@@ -30,7 +30,6 @@ export default function CreatorsPage() {
         <Hero
           title="Better ways to Monetize your Fitness Expertise"
           subtitle="Turn your passion into profit with our creator platform"
-          buttonText="Register"
           imageUrl="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb"
           textColor="red-500"
         />

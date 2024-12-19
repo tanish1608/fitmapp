@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormData } from '../lib/types/form';
-import { supabase } from '../lib/supabase';
+import { submitContactForm } from '../lib/api/contact';
 
 interface UseSignUpForm {
   submitForm: (data: FormData) => Promise<boolean>;
@@ -17,18 +17,7 @@ export const useSignUpForm = (): UseSignUpForm => {
       setIsLoading(true);
       setError(null);
       
-      const { error: supabaseError } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          user_type: formData.userType
-        }]);
-
-      if (supabaseError) throw supabaseError;
-      
+      await submitContactForm(formData);
       return true;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Something went wrong';
