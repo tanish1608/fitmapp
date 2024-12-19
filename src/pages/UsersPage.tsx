@@ -28,7 +28,7 @@ export default function UsersPage() {
     <div className="bg-black min-h-screen text-white">
       <HomeSection>
         <Hero
-          title="TRANSFORM WITH THE BEST AND YOUR FAVOURITE"
+          title="TRANSFORM WITH THE BEST AND YOUR FAVOURITEEEE"
           subtitle="Join the elite fitness community today"
           imageUrl="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb"
           textColor="purple-600"

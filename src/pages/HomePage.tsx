@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       <Hero
-        title="TRANSFORM WITH THE BEST AND YOUR FAVOURITE"
+        title="TRANSFORM WITH THE BEST AND YOUR FAVOURITEEEEE"
         subtitle="Join the revolution in fitness transformation"
         imageUrl="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
         textColor="purple-600"
