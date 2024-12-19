@@ -1,11 +1,11 @@
 interface HeroProps {
   title: string;
   subtitle: string;
-  imageUrl: string;
+  imagePath: string;
   textColor?: string;
 }
 
-export default function Hero({ title, subtitle, imageUrl, textColor = "purple-600" }: HeroProps) {
+export default function Hero({ title, subtitle, imagePath, textColor = "purple-600" }: HeroProps) {
   const titleParts = title.split(' ');
   const highlightedText = titleParts.slice(-2).join(' ');
   const regularText = titleParts.slice(0, -2).join(' ');
@@ -17,15 +17,18 @@ export default function Hero({ title, subtitle, imageUrl, textColor = "purple-60
     }
   };
 
+  console.log("Image Path:", imagePath); // Debugging step
+
   return (
     <div className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${imageUrl})`,
+          backgroundImage: `url(${imagePath})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="absolute inset-0 bg-black/70" />

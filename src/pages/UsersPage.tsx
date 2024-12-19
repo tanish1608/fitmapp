@@ -30,7 +30,7 @@ export default function UsersPage() {
         <Hero
           title="TRANSFORM WITH THE BEST AND YOUR FAVOURITEEEE"
           subtitle="Join the elite fitness community today"
-          imageUrl="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb"
+          imagePath="public/SDFGHKHJHGFDFD.png"
           textColor="purple-600"
         />
       </HomeSection>

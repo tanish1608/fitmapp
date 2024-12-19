@@ -8,6 +8,7 @@ import InfoSection from '../components/home/InfoSection';
 import FAQ from '../components/home/FAQ';
 import SignUpForm from '../components/home/SignUpForm';
 
+
 export default function CreatorsPage() {
   const faqItems = [
     {
@@ -25,12 +26,12 @@ export default function CreatorsPage() {
   ];
 
   return (
-    <div className="relative">
+    <div className="bg-black relative">
       <HomeSection>
         <Hero
           title="Better ways to Monetize your Fitness Expertise"
           subtitle="Turn your passion into profit with our creator platform"
-          imageUrl="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb"
+          imagePath="/SDFGHKHJHGFDFD.png"
           textColor="red-500"
         />
       </HomeSection>
