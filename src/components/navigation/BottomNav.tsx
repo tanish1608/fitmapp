@@ -13,6 +13,8 @@ interface BottomNavProps {
 
 export default function BottomNav({ type }: BottomNavProps) {
   const [activeSection, setActiveSection] = useState('home');
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems: NavItem[] = [
     { id: 'home', label: 'Home', icon: <Home className="h-5 w-5" /> },
@@ -31,6 +33,21 @@ export default function BottomNav({ type }: BottomNavProps) {
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+      
+      // Show/hide based on scroll direction and position
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (scrollingDown) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+
+      // Update active section
       const sections = navItems.map(item => ({
         id: item.id,
         element: document.getElementById(item.id),
@@ -49,12 +66,12 @@ export default function BottomNav({ type }: BottomNavProps) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY, navItems]);
 
   const getButtonStyles = (itemId: string) => {
-    const baseStyles = "flex flex-col items-center px-4 py-2 transition-all duration-200";
+    const baseStyles = "flex flex-col items-center px-3 sm:px-4 py-2 transition-all duration-200";
     const activeStyles = type === 'creator' 
       ? "text-red-400 scale-110" 
       : "text-purple-400 scale-110";
@@ -64,8 +81,8 @@ export default function BottomNav({ type }: BottomNavProps) {
   };
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex items-center gap-2 backdrop-blur-md bg-black/30 rounded-full shadow-lg px-4 py-2 border border-white/10">
+    <div className={`fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className="flex items-center gap-1 sm:gap-2 backdrop-blur-md bg-black/30 rounded-full shadow-lg px-2 sm:px-4 py-1 sm:py-2 border border-white/10">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -73,7 +90,7 @@ export default function BottomNav({ type }: BottomNavProps) {
             className={getButtonStyles(item.id)}
           >
             {item.icon}
-            <span className="text-xs mt-1">{item.label}</span>
+            <span className="text-xs mt-1 hidden sm:block">{item.label}</span>
           </button>
         ))}
       </div>

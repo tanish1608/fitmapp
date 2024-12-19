@@ -11,40 +11,40 @@ import SignUpForm from '../components/home/SignUpForm';
 export default function UsersPage() {
   const faqItems = [
     {
-      question: 'Who is FitMapp for?',
-      answer: 'FitMapp is designed for fitness enthusiasts looking to transform their journey with expert guidance.',
+      question: 'What is FitMapp for?',
+      answer: 'FitMapp is your ultimate fitness companion that connects you with expert trainers for personalized workouts.',
     },
     {
-      question: 'Where can I download FitMapp?',
-      answer: 'FitMapp is available on both iOS and Android platforms through their respective app stores.',
+      question: 'How do I get started?',
+      answer: 'Simply sign up using our registration form below and get instant access to our platform.',
     },
     {
-      question: 'What are the first user benefits?',
-      answer: 'First users get exclusive access to premium features, personalized training plans, and special discounts.',
+      question: 'What are the premium features?',
+      answer: 'Premium members get access to exclusive workout plans, nutrition guides, and 1-on-1 coaching sessions.',
     },
   ];
 
   return (
-    <div className="relative">
+    <div className="bg-black min-h-screen text-white">
       <HomeSection>
         <Hero
           title="TRANSFORM WITH THE BEST AND YOUR FAVOURITE"
-          subtitle="Connect with expert trainers and achieve your fitness goals"
-          imageUrl="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+          subtitle="Join the elite fitness community today"
+          imageUrl="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb"
           textColor="purple-600"
         />
       </HomeSection>
 
       <FeaturesSection>
-        <div className="space-y-20">
+        <div className="space-y-12 px-4 py-16">
           <InfoSection
             title="What is FitMapp?"
-            content="FitMapp is your ultimate fitness companion, connecting you with expert trainers and providing personalized workout plans to help you achieve your fitness goals."
-            imageUrl="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b"
+            content="FitMapp is your premium fitness platform that connects you with elite trainers. Get personalized workout plans, track your progress, and achieve results faster than ever."
+            imageUrl="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61"
           />
           <InfoSection
-            title="What is in it for you?"
-            content="Get access to premium workout plans, expert guidance, progress tracking, and a supportive community to keep you motivated throughout your fitness journey."
+            title="What's in it for you?"
+            content="Access premium workout plans, expert guidance, progress tracking, and join a community of dedicated fitness enthusiasts. Transform your body with professional support."
             imageUrl="https://images.unsplash.com/photo-1574680096145-d05b474e2155"
             isReversed
           />
