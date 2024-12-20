@@ -13,7 +13,7 @@ interface BottomNavProps {
 
 export default function BottomNav({ type }: BottomNavProps) {
   const [activeSection, setActiveSection] = useState('home');
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems: NavItem[] = [
@@ -34,16 +34,7 @@ export default function BottomNav({ type }: BottomNavProps) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollingDown = currentScrollY > lastScrollY;
-      
-      // Show/hide based on scroll direction and position
-      if (currentScrollY > 100) {
-        setIsVisible(true);
-      } else if (scrollingDown) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+
       
       setLastScrollY(currentScrollY);
 
