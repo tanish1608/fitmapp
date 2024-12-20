@@ -100,7 +100,7 @@ export default function SignUpForm({ type }: SignUpFormProps) {
       </div> */}
 
       <p className="text-center mt-6 text-gray-300">
-        We're excited to invite you to be part of Fitmapp's development and beta testing! Share your details <br /> with us, and you'll get early access to our platform, allowing you to buy and track your fitness plans <br /> while giving valuable feedback. Let's grow together!
+        We're excited to invite you to be part of Fitmapp's development and beta testing! Share your details  with us, and you'll get early access to our platform, allowing you to buy and track your fitness plans while giving valuable feedback. Let's grow together!
       </p>
       <br />
       <br />
@@ -167,8 +167,8 @@ export default function SignUpForm({ type }: SignUpFormProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-          >
+            className={`px-6 py-2 rounded-full ${type === 'creator' ? 'bg-red-500 hover:bg-red-700' : 'bg-purple-600 hover:bg-purple-700'} text-white font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5`}
+          > 
             {isLoading ? 'Signing Up...' : 'Join Fitmapp'}
           </button>
         </div>

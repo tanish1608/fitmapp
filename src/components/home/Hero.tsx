@@ -24,22 +24,22 @@ export default function Hero({ title, imagePath, textColor = "purple-600", page 
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const buttonColorClass = page === 'creator' ? 'bg-red-600 hover:bg-red-700' : 'bg-purple-600 hover:bg-purple-700';
 
   console.log("Image Path:", imagePath); // Debugging step
 
   return (
-    <div className="relative min-h-[100svh] flex flex-col lg:flex-row items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-[100svh] flex flex-col lg:flex-row items-center sm-justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center lg:w-1/2">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white font-khand">
+      <div className="relative z-10 max-w-4xl mx-auto  lg:w-1/2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-left lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white font-khand">
           {regularText}{' '}
           <span className={`text-${textColor}`}>{highlightedText}</span>
         </h1>
 
         <button
           onClick={scrollToContact}
-          className={`${page === 'creator' ? 'bg-red-500 hover:bg-red-700' : 'bg-purple-600 hover:bg-purple-700'
-            } text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-colors`}
+          className={`${buttonColorClass} text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-base text-left sm:text-lg font-semibold transition-colors`}
         >
           Get Started
         </button>

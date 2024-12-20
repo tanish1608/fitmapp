@@ -38,7 +38,7 @@ export default function CreatorsPage() {
   ];
 
   return (
-    <div className="bg-black relative">
+    <div className="bg-black relative ">
       <HomeSection>
         <Hero
           title="Better ways to Monetize your Fitness Expertise"
@@ -49,7 +49,7 @@ export default function CreatorsPage() {
       </HomeSection>
 
       <FeaturesSection>
-        <div className="space-y-20">
+        <div className="space-y-20 px-4 py-16">
           <InfoSection
             title="What is FitMapp?"
             content="Manage your clients, create plans, and earn—all in one platform.   Become the cartographer of your client’s fitness journey.   Connect with clients and grow your fitness business.   Track progress, stay engaged, and inspire your clients to reach their goals.   Create fitness plans and build your community of loyal clients."

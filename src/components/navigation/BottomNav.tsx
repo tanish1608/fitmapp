@@ -37,7 +37,7 @@ export default function BottomNav({ type }: BottomNavProps) {
       const scrollingDown = currentScrollY > lastScrollY;
       
       // Show/hide based on scroll direction and position
-      if (currentScrollY < 100) {
+      if (currentScrollY > 100) {
         setIsVisible(true);
       } else if (scrollingDown) {
         setIsVisible(false);
